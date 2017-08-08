@@ -62,6 +62,7 @@ router.route('/:id')
       let update = {}
       if (req.body.name) update.name = req.body.name
       if (req.body.age) update.age = req.body.age
+      if (req.body.phoneNumber) update.phoneNumber = req.body.phoneNumber
       let user = await User.updateUserById(req.params.id, update)
       return {
         code: 0,

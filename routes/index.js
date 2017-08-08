@@ -11,7 +11,7 @@ router.get('/', function (req, res, next) {
 
 router.post('/login', (req, res, next) => {
   (async () => {
-    const user = await User.login(req.body.phoneNumber, req.body.password)
+    const user = await User.login(req.body.name, req.body.password)
 
     const token = JWT.sign({_id: user._id, iat: Date.now(), expire: Date.now() + 24 * 60 * 60 * 1000}, JWT_SECRET)
 
